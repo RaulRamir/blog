@@ -19,7 +19,8 @@
      }
     }
     else {
-        echo "Database already exists"
+        echo "Database already exists";
     }
+    /*confirms the existence of the database*/
     
     $connection->close();
