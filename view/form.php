@@ -1,5 +1,6 @@
 <?php
     require_once(__DIR__ . "/../model/config.php");
+    //connects your webpage that you linked it to
 ?>
 
 <h1>Create Blog post</h1>
