@@ -1,0 +1,18 @@
+header {
+    border-radius: 200px;
+    border-radius: 29px;
+    background-color: red;
+    width: 1500px;
+    
+}
+#mycanvas{
+    margin-Left: 200px;
+    
+}
+@media screen and (max-width:1499px){
+    header{
+        width{
+            width: 100%
+        }
+    }
+}
