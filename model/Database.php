@@ -17,5 +17,12 @@ class Database {
         
     }
     
+    public function closeConnection() {
+        
+    }
     
+    public function query($string) {
+        //create an new object and call it specifically on this function 
+        
+    }
 }
