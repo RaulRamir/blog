@@ -25,7 +25,9 @@ class Database {
     }
 
     public function closeConnection() {
-        
+        if(isset($this->connection)) {
+            $this->connection->close();
+        }   
     }
 
     public function query($string) {
