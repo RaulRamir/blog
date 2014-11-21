@@ -19,4 +19,4 @@
   
 //this echos the post and title but doesnt do anything for right now
    
-     $connection->close();
+     

@@ -32,6 +32,13 @@ class Database {
 
     public function query($string) {
         //create an new object and call it specifically on this function 
+        $this->openConnection();
+        
+        $query = $this->conection->query($string);
+        
+        $this->closeConnection();
+        
+        return $query;
     }
 
 }
