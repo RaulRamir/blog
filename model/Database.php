@@ -7,6 +7,7 @@ class Database {
     private $username;
     private $password;
     private $database;
+    public $error;
 
     public function __construct($host, $username, $password, $database) {
         $this->host = $host;
@@ -18,10 +19,8 @@ class Database {
 
         if ($this->connection->connect_error) {
             die("<p>Reeor: " . $this->connection->connect_error . "</p>");
-        } else {
-            echo "Success" . $connection->host_info;
-        }
-        $exists = $connection->select_db($database);
+        } 
+        $exists = $this->connection->select_db($database);
 
         if (!$exists) {
             $query = $this->connection->query("CREATE DATABASE $database");
@@ -37,8 +36,8 @@ class Database {
     public function openConnection() {
         $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
 
-        if ($connection->connect_error) {
-            die("<p>Reeor: " . $this->connection->connect_error . "</p>");
+        if ($this->connection->connect_error) {
+            die("<p>Error: " . $this->connection->connect_error . "</p>");
             //kills the connection when theirs is an error in the connection
         }
     }
@@ -53,7 +52,7 @@ class Database {
         //create an new object and call it specifically on this function 
         $this->openConnection();
 
-        $query = $this->conection->query($string);
+        $query = $this->connection->query($string);
 
         $this->closeConnection();
 
